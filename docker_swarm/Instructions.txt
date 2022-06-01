@@ -1,0 +1,10 @@
+This directory holds a docker-compose.yml file which would spin up 3 different nodes. However, it would not directly start your docker swarm mode out of the box. The basic networking is done with this file, but to actually start the Swarm mode, you need to perform the below mentioned tasks.
+
+
+1) To spin up 3 docker container nodes for swarm cluster, execute the following command: 
+	- docker-compose up -d
+2) Copy the docker container id for 'node1' with this command:
+	- docker ps
+3) Now you need to enter inside the node1 container with this command:
+	- docker exec -it <node1 container id> sh
+4) 
