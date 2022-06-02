@@ -1,5 +1,4 @@
 import happybase
-from numpy import product
 
 
 connection = happybase.Connection('hbase-docker', port=9090, autoconnect=True)

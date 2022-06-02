@@ -21,7 +21,6 @@
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="{{url_for('home')}}">Home</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('service_page')}}">Services</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('seasonal_products')}}">Seasonal</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('product_page')}}">Product</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('contact')}}">Contact</a></li>
                 </ul>
             </div>
@@ -35,7 +34,19 @@
                     <p>Which Products Sells Most in Which Season</p>
                 </div>
                 <div class="block-content">
-                    <div class="form-control">
+
+                    <div class="card"><img class="card-img w-100 d-block" />
+                        <div style="padding-bottom: 20px;">
+                            <div role="group" class="btn-group shadow float-left">
+                                <form method="post"><button class="btn-outline-primary" name="Summer" value="Summer">Summer</button></form>
+                                <form method="post"><button class="btn-outline-primary" name="Winter" value="Winter">Winter</button></form>
+                                <form method="post"><button class="btn-outline-primary" name="Autumn" value="Autumn">Autumn</button></form>
+                                <form method="post"><button class="btn-outline-primary" name="Spring" value="Spring">Spring</button></form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-control">
                         <div class="row">
                             <form method="post"><button class="btn-outline-primary" name="Summer" value="Summer">Summer</button></form>
                             <form method="post"><button class="btn-outline-primary" name="Winter" value="Winter">Winter</button></form>
@@ -45,7 +56,7 @@
                                 This is a link
                               </button>
                         </div>
-                    </div>
+                    </div> -->
 
 
                     {% if (response is not none) %}

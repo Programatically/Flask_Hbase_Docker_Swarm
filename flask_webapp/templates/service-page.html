@@ -21,7 +21,6 @@
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="{{url_for('home')}}">Home</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('service_page')}}">Services</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('seasonal_products')}}">Seasonal</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('product_page')}}">Product</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('contact')}}">Contact</a></li>
                 </ul>
             </div>
@@ -32,7 +31,26 @@
             <div class="container">
                 <div class="block-heading">
                     <h2 class="text-info">Search Products!</h2>
+
+
                     <div class="row">
+                        <div class="col-xl-9 mx-auto" style="width: 960px;max-width: none;">
+                            <form id="search_form" method="post">
+                                <div class="form-row">
+                                    <div class="col-12 col-md-9 mb-2 mb-md-0" style="width: 450px;min-width: 50px;max-width: 450px;"><input class="form-control form-control-lg" name="search"  type="search" value="{{session['search_text']}}" placeholder="Enter a product..." style="width: 450px;max-width: 500px;"></div>
+                                    <div class="col-12 col-md-3" style="padding-right: 15px;padding-left: 15px;"><button class="btn btn-primary btn-block btn-lg" type="submit">Search!</button></div>
+                                    <div class="col" style="width: 100%;max-width: 100%;">
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="radio_filter1" id="radio1"><label class="form-check-label" for="radio1">Price High to Low</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="radio_filter2" id="radio2"><label class="form-check-label" for="radio2">Latest Products</label></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+                    <!-- <div class="row">
                         <div class="col-xl-9 mx-auto">
                             <form id="search_form" method="post">
                                 <div class="form-row">
@@ -51,7 +69,7 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row">
                     
@@ -64,7 +82,7 @@
                                 <h4 class="card-title">{{ i[-3] }}</h4>
                                 <p class="card-text">Price: {{ i[-2] }}</p>
                             </div>
-                            <div><a class="btn btn-outline-primary btn-sm" name="btn_view_product" href="{{url_for('product_page', custID = i[1], name=i[-3], price=i[-2] )}}" value="{{i[0]}}">Learn More</a></div>
+                            <div style="margin-bottom: 20px;"><a class="btn btn-outline-primary btn-sm" name="btn_view_product" href="{{url_for('product_page', custID = i[1], name=i[-3], price=i[-2] )}}" value="{{i[0]}}">Learn More</a></div>
                         </div>
                     </div>
                 
